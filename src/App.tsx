@@ -7,6 +7,7 @@ import { HeaderBar } from "./components/HeaderBar";
 import { Home } from "./components/Home";
 import Delegation from "./components/Delegation";
 import { client } from "./config/queryClient";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -14,12 +15,13 @@ function App() {
       <WagmiProvider config={config}>
         <QueryClientProvider client={client}>
           <Router>
-            <div className="min-h-screen bg-base-100">
+            <div className=" bg-base-100 min-h-screen">
               <HeaderBar />
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/delegation" element={<Delegation />} />
               </Routes>
+              <Footer />
             </div>
           </Router>
         </QueryClientProvider>
